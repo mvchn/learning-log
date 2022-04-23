@@ -56,7 +56,7 @@ def new_entry(request, topic_id):
             new_entry = form.save(commit=False)
             new_entry.topic = topic
             form.save()
-            return redirect('learning_logs:topics')
+            return redirect ('learning_logs:topic', topic_id=topic.id)
 
     # write clean form
     context = {'topic': topic, 'form': form}
